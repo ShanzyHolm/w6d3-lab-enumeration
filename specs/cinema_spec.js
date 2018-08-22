@@ -28,7 +28,15 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual, films);
   });
 
-  it('should be able to get a list of film titles');
+  it('should be able to get a list of film titles', function () {
+    const filmTitleArray = cinema.films
+    const actual = filmTitleArray.map(film => film.title);
+    return filmTitleArray;
+    // const actual = cinema.countFilm();
+    assert.deepStrictEqual(actual, [moonlight, bladeRunner, dunkirk, blackPanther, trainspotting])
+  });
+
+
   it('should be able to find a film by title');
   it('should be able to filter films by genre');
   it('should be able to check whether there are some films from a particular year');
@@ -39,3 +47,10 @@ describe('Cinema', function () {
 });
 
 module.exports = Cinema;
+
+
+// const filmTitleArray = cinema.films
+// const films = filmArray.map(film => film.title);
+
+// const actual = cinema.countFilm();
+// assert.deepStrictEqual(actual, 5)
