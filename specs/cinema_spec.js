@@ -29,25 +29,39 @@ describe('Cinema', function () {
   });
 
   it('should be able to get a list of film titles', function () {
-    const filmTitleArray = cinema.films
-    const actual = filmTitleArray.map(film => film.title);
-    return filmTitleArray;
-    // const actual = cinema.countFilm();
-    assert.deepStrictEqual(actual, [moonlight, bladeRunner, dunkirk, blackPanther, trainspotting])
+    const actual = cinema.filmTitles();
+    assert.deepStrictEqual(actual, ["Moonlight", "Blade Runner 2049", "Dunkirk", "Black Panther", "T2 Trainspotting"]);
+  });
+
+  xit('should be able to find a film by title', function() {
+    result = cinema.getFilmByTitle("Dunkirk");
+    actual = result.getFilmYear("Dunkirk");
+    assert.strictEqual(actual, 2017);
   });
 
 
-  it('should be able to find a film by title');
-  it('should be able to filter films by genre');
+  // it('should be able to filter films by genre', function(){
+  //     const actual = cinema.getFilmsbyGenre('drama');
+  //     assert.strictEqual(actual, 2);
+  // });
+
+
+
   it('should be able to check whether there are some films from a particular year');
   it('should be able to check whether there are no films from a particular year');
   it('should be able to check whether all films are over a particular length');
-  it('should be able to calculate total running time of all films');
+
+
+  it('should be able to calculate total running time of all films', function(){
+
+  });
 
 });
 
 module.exports = Cinema;
+// {"genre": "history", "length": 96, "title": "Dunkirk", "year": 2017});
 
+// [Film "genre": "history", "length": 96, "title": "Dunkirk", "year": 2017]
 
 // const filmTitleArray = cinema.films
 // const films = filmArray.map(film => film.title);
